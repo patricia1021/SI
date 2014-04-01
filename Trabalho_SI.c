@@ -42,8 +42,40 @@ int main (int argc, char *argv[])
 	if ( ponteiro == NULL)
 	{
 		printf("O arquivo esta vazio.\n");
-		exit(1);
+		exit(2);
 	}
+/*	
+	 while (!feof(fp)){
+	 	if (char d == ":"){
+	 		while (d != ";"){
+	 			int codigo = 
+	 		}
+	 	}
+	 }
+       	 while (!feof(fp)){
+	 	if (char d == ":"){
+	 		while (d != ";"){
+	 			char[20] descricao= 
+	 		}
+	 	}
+	 }
+	  while (!feof(fp)){
+	 	if (char d == ":"){
+	 		while (d != ";"){
+	 			int existe = 
+	 		}
+	 	}
+	 }
+	  while (!feof(fp)){
+	 	if (char d == ":"){
+	 		while (d != ";"){
+	 			int pedidos = 
+	 		}
+	 	}
+	 }
+	
+ */         
+ 
 	
 		media = Calculando_a_media (ponteiro, *soma, *contador);
 		variancia = Calculando_a_variancia (ponteiro, media);
@@ -59,7 +91,15 @@ int main (int argc, char *argv[])
 	}
 	
 	fprintf(fp, "%s", __DATE__);
-}	
+	fprintf(fp, "%d", estoque_minimo);
+	if (estoque_minimo > ponto_ressuprimento){
+		fprintf("NÃ£o renovar estoque!");
+	}
+	else{
+		fprintf("Renovar estoque!");
+	}
+	
+}
 	
 
 void Retorna_soma_e_contador (Lista ponteiro, int *soma, int *contador)
@@ -91,7 +131,7 @@ double Calculando_a_variancia (Lista ponteiro,double media)
 	aux -> ponteiro;	
 	while (aux != NULL) 
 		{
-			//Subtraindo o valor da demanda pela média, elevando ao quadrado:
+			//Subtraindo o valor da demanda pela mï¿½dia, elevando ao quadrado:
 			x = aux->demanda;
 			var += pow((x - media),2);
 			aux = aux -> prox;
